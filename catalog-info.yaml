@@ -1,0 +1,133 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: pathfinder-rest-api
+  title: Pathfinder REST API
+  description: |
+    Receives events from Pathfinder via RestApi, converts them to CloudEvents
+    and sends them to a `cloudevents` topic in Kafka.
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: it-reaktion
+  definition: |
+    openapi: 3.1.0
+    info:
+      title: Pathfinder RestApi
+      version: v1alpha1
+      description: |
+        Receives events from Pathfinder via RestApi, converts them to CloudEvents
+        and sends them to a `cloudevents` topic in Kafka.
+    paths:
+      /webhhook:
+        post:
+          summary: Receive a POST request and generate a CloudEvent.
+          requestBody:
+            description:
+            content:
+              text/plain:
+                schema:
+                  type: string
+                  example: 'event=OnAir&channel=Klangbecken'
+            required: true
+          responses:
+            '200':
+              description: Event received
+              content:
+                application/json:
+                  schema:
+                    type: object
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: pathfinder-cloudevents-api
+  title: Pathfinder CloudEvents API
+  description: |
+    Receives events from Pathfinder via RestApi, converts them to CloudEvents
+    and sends them to a `cloudevents` topic in Kafka.
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: asyncapi
+  lifecycle: experimental
+  owner: it-reaktion
+  definition: |
+    asyncapi: '2.6.0'
+    id: 'https://github.com/radiorabe/pathfinder-cloudevents-service'
+    info:
+      title: Pathfinder CloudEvents Service
+      version: v1alpha1
+      description: |
+        Receives events from Pathfinder via RestApi, converts them to CloudEvents
+        and sends them to a `cloudevents` topic in Kafka.
+    servers:
+      production:
+        url: kafka.service.int.rabe.ch
+        protocol: kafka
+        description: Production Kafka Ensemble
+        security:
+          - ssl: []
+    channels:
+      cloudevents:
+        subscribe:
+          message:
+            $ref: '#/components/messages/CloudEvent'
+    components:
+      messages:
+        CloudEvent:
+          description: |
+            Generic CloudEvent containing an OnAir or OffAir event
+          payload:
+              type: object
+              properties:
+                specversion:
+                  type: string
+                  enum: ['1.0']
+                type:
+                  type: string
+                  example: 'ch.rabe.api.events.pathfinder.v0alpha1.OnAir.Klangbecken'
+                source:
+                  type: string
+                  format: uri
+                  example: 'https://github.com/radiorabe/pathfinder-cloudevents-service'
+                id:
+                  type: string
+                time:
+                  type: string
+                  format: date-time
+                contenttype:
+                  type: string
+                  example: 'text/plain'
+      securitySchemes:
+        ssl:
+          type: X509
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: pathfinder-cloudevents-service
+  title: Pathfinder CloudEvents Service
+  description: |
+    Receives events from Pathfinder via RestApi, converts them to CloudEvents
+    and sends them to a `cloudevents` topic in Kafka.
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: radiorabe/pathfinder-cloudevents-service
+  links:
+    - url: https://docs.telosalliance.com/pathfinder-core-pro/
+      title: Pathfinder Documentation
+spec:
+  type: service
+  lifecycle: experimental
+  owner: it-reaktion
+  dependsOn:
+    - component:default/python-minimal
+    - component:default/s2i-python-minimal
+    - component:default/kafka
+  providesApis:
+    - pathfinder-cloudevents-api
+    - pathfinder-rest-api

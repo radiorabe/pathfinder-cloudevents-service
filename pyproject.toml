@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "pathfinder-cloudevents-service"
+version = "0.0.0"
+description = "Subscribe to Axia Pathfinder Events and send them to Kafka as CloudEvents."
+authors = ["RaBe IT-Reaktion <it@rabe.ch>"]
+license = "AGPLv3"
+readme = "README.md"
+packages = [{include = "pathfinderevents.py"}]
+
+[tool.poetry.scripts]
+pathfinderevents = 'pathfinderevents:main'
+
+[tool.poetry.dependencies]
+python = "^3.11"
+axia-pathfinder-client = "^0.2.1"
+configargparse = "^1.5.3"
+cloudevents = "^1.9.0"
+kafka-python = "^2.0.2"
+cherrypy = "^18.8.0"
+pyyaml = "^6.0"
+werkzeug = "^2.3.6"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+pytest = "^7.3.2"
+pytest-cov = "^4.0.0"
+pytest-random-order = "^1.1.0"
+pytest-ruff = "^0.1"
+ruff = "^0.0.278"
+isort = "^5.12.0"
+pytest-isort = "^3.1.0"
+werkzeug = "^2.3.6"
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+minversion = "7.2"
+addopts = "-ra -q --doctest-glob='*.md' --doctest-modules --cov --ignore=docs/ --ruff"
+filterwarnings = [
+    "ignore::DeprecationWarning:cherrypy",
+    "ignore::DeprecationWarning:pkg_resources",
+]
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,6 @@
+venv/
+.coverage
+.env
+__pycache__
+site/
+trivy.*
