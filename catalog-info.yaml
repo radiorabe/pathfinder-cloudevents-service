@@ -22,7 +22,7 @@ spec:
         Receives events from Pathfinder via RestApi, converts them to CloudEvents
         and sends them to a `cloudevents` topic in Kafka.
     paths:
-      /webhhook:
+      /webhook:
         post:
           summary: Receive a POST request and generate a CloudEvent.
           requestBody:

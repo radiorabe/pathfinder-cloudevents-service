@@ -25,8 +25,8 @@ def from_pathfinder_request(request: Request) -> CloudEvent:
             "source": "https://github.com/radiorabe/pathfinder-cloudevents-service",
             "subject": form["channel"][0],
             "datacontenttype": "text/plain",
-            "partitionid": form["channel"][0],
         },
+        form["channel"][0],
     )
 
 

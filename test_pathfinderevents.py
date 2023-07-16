@@ -110,9 +110,9 @@ def test_api_webhook(mock_producer, mock_api, mock_sys_exit):
         headers=None,
     )
     value = json.loads(mock_producer.send.call_args.kwargs["value"])
-    assert value["data"] is None
+    assert value["data"] == "Klangbecken"
     assert value["datacontenttype"] == "text/plain"
-    assert value["partitionid"] == "Klangbecken"
+    assert "partitionid" not in value
     assert (
         value["source"] == "https://github.com/radiorabe/pathfinder-cloudevents-service"
     )
