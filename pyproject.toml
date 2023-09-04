@@ -18,7 +18,7 @@ cloudevents = "^1.9.0"
 kafka-python = "^2.0.2"
 cherrypy = "^18.8.0"
 pyyaml = "^6.0"
-werkzeug = "^2.3.6"
+werkzeug = "^2.3.7"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
@@ -29,7 +29,7 @@ pytest-ruff = "^0.1"
 ruff = "^0.0.287"
 isort = "^5.12.0"
 pytest-isort = "^3.1.0"
-werkzeug = "^2.3.6"
+werkzeug = "^2.3.7"
 
 [tool.isort]
 profile = "black"
