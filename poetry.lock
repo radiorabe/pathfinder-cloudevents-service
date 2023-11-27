@@ -24,13 +24,13 @@ files = [
 
 [[package]]
 name = "axia-pathfinder-client"
-version = "0.2.1"
+version = "0.2.2"
 description = "Proof of concept Axia Pathfinder API/SDK."
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "axia_pathfinder_client-0.2.1-py3-none-any.whl", hash = "sha256:261000736da55463ba1b3abf7e40315085e9646070950a89cd2286e6e6e71a18"},
-    {file = "axia_pathfinder_client-0.2.1.tar.gz", hash = "sha256:99d1be6cf70a7cdbf4a9ecb228edc7e3b205ec7856728baff21ddeab9ee614d5"},
+    {file = "axia_pathfinder_client-0.2.2-py3-none-any.whl", hash = "sha256:6e6436bed514a96680d587d6faa447f07458895aa25655b467c050f1db4065a4"},
+    {file = "axia_pathfinder_client-0.2.2.tar.gz", hash = "sha256:b22a021ed74be908756eef7b46c9f8c63b34ed39200714fdee68292f9d78e75e"},
 ]
 
 [package.dependencies]
@@ -962,4 +962,4 @@ test = ["zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "460bc0d7e8d5a8f2daf42266e99358bec9d8b08d3b6384da16d10b21c58b38f5"
+content-hash = "311c9d12b874d5751749c5bb4589c0771eb289b85ba518deda2f0b0debca6fd4"
