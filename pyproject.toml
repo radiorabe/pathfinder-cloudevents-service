@@ -12,7 +12,6 @@ pathfinderevents = 'pathfinderevents:main'
 
 [tool.poetry.dependencies]
 python = "^3.11"
-axia-pathfinder-client = "^0.2.1"
 configargparse = "^1.7"
 cloudevents = "^1.10.1"
 kafka-python = "^2.0.2"
