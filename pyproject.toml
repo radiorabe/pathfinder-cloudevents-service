@@ -27,7 +27,7 @@ pytest-random-order = "^1.1.1"
 pytest-ruff = "^0.3"
 ruff = "^0.3.0"
 isort = "^5.13.2"
-pytest-isort = "^3.1.0"
+pytest-isort = "^4.0.0"
 werkzeug = "^3.0.1"
 
 [tool.isort]
