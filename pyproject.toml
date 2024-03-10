@@ -23,19 +23,14 @@ werkzeug = "^3.0.1"
 black = "^24.2.0"
 pytest = "^8.1.1"
 pytest-cov = "^4.0.0"
+pytest-mypy = "^0.10.3"
 pytest-random-order = "^1.1.1"
 pytest-ruff = "^0.3"
 ruff = "^0.3.2"
-isort = "^5.13.2"
-pytest-isort = "^4.0.0"
-werkzeug = "^3.0.1"
-
-[tool.isort]
-profile = "black"
 
 [tool.pytest.ini_options]
 minversion = "7.2"
-addopts = "-ra -q --doctest-glob='*.md' --doctest-modules --cov --ignore=docs/ --ruff"
+addopts = "-ra -q --doctest-glob='*.md' --doctest-modules --cov --ignore=docs/ --ruff --mypy"
 filterwarnings = [
     "ignore::DeprecationWarning:cherrypy",
     "ignore::DeprecationWarning:pkg_resources",
