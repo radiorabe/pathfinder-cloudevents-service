@@ -20,6 +20,8 @@ RUN    microdnf install -y \
 
 COPY LICENSE /license/
 
+ENV APP_BIND_ADDR=0.0.0.0
+
 USER 1001
 
 EXPOSE 8080
