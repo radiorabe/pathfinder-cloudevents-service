@@ -14,8 +14,8 @@ pathfinderevents = 'pathfinderevents:main'
 python = "^3.11"
 configargparse = "^1.7"
 cloudevents = "^1.10.1"
-kafka-python = "^2.0.2"
 cherrypy = "^18.9.0"
+kafka-python-ng = "^2.2.2"
 pyyaml = "^6.0"
 werkzeug = "^3.0.2"
 
