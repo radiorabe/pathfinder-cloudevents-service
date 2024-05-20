@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -535,11 +535,11 @@
 
 
 <a id="pathfinderevents"></a>
-  <div class="doc doc-contents first">
-  
+    <div class="doc doc-contents first">
+
       <p>Create CloudEvents from REST-API Requests.</p>
 
-  
+
 
   <div class="doc doc-children">
 
@@ -555,20 +555,20 @@
 
 
 <h2 id="pathfinderevents.ApiServer" class="doc doc-heading">
-          <code>ApiServer</code>
+            <code>ApiServer</code>
 
 
 </h2>
 
 
-  <div class="doc doc-contents ">
+    <div class="doc doc-contents ">
 
-  
+
       <p>The API server.</p>
 
-            <details class="quote">
-              <summary>Source code in <code>pathfinderevents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-46"> 46</a></span>
+              <details class="quote">
+                <summary>Source code in <code>pathfinderevents.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-46"> 46</a></span>
 <span class="normal"><a href="#__codelineno-0-47"> 47</a></span>
 <span class="normal"><a href="#__codelineno-0-48"> 48</a></span>
 <span class="normal"><a href="#__codelineno-0-49"> 49</a></span>
@@ -868,12 +868,11 @@
 <a id="__codelineno-0-194" name="__codelineno-0-194"></a>            <span class="n">status</span><span class="o">=</span><span class="s2">&quot;200 Event Received&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-195" name="__codelineno-0-195"></a>        <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-            </details>
+              </details>
 
-  
+
 
   <div class="doc doc-children">
-
 
 
 
@@ -886,20 +885,19 @@
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="pathfinderevents.ApiServer.__call__" class="doc doc-heading">
-          <code class="highlight language-python"><span class="fm">__call__</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__call__</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Forward calls to wsgi_app.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-109">109</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-109">109</a></span>
 <span class="normal"><a href="#__codelineno-0-110">110</a></span>
 <span class="normal"><a href="#__codelineno-0-111">111</a></span>
 <span class="normal"><a href="#__codelineno-0-112">112</a></span>
@@ -913,29 +911,27 @@
 <a id="__codelineno-0-114" name="__codelineno-0-114"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Forward calls to wsgi_app.&quot;&quot;&quot;</span>
 <a id="__codelineno-0-115" name="__codelineno-0-115"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wsgi_app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="pathfinderevents.ApiServer.__init__" class="doc doc-heading">
-          <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">bind_addr</span><span class="p">,</span> <span class="n">bind_port</span><span class="p">,</span> <span class="n">realm</span><span class="p">,</span> <span class="n">topic</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">bind_addr</span><span class="p">,</span> <span class="n">bind_port</span><span class="p">,</span> <span class="n">realm</span><span class="p">,</span> <span class="n">topic</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Create ApiServer.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-49">49</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-49">49</a></span>
 <span class="normal"><a href="#__codelineno-0-50">50</a></span>
 <span class="normal"><a href="#__codelineno-0-51">51</a></span>
 <span class="normal"><a href="#__codelineno-0-52">52</a></span>
@@ -979,29 +975,27 @@
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a>
 <a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">url_map</span> <span class="o">=</span> <span class="n">Map</span><span class="p">([</span><span class="n">Rule</span><span class="p">(</span><span class="s2">&quot;/webhook&quot;</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;webhook&quot;</span><span class="p">)])</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="pathfinderevents.ApiServer.auth_required" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">auth_required</span><span class="p">(</span><span class="n">_</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">auth_required</span><span class="p">(</span><span class="n">_</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Return a 401 unauthorized reponse.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-140">140</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-140">140</a></span>
 <span class="normal"><a href="#__codelineno-0-141">141</a></span>
 <span class="normal"><a href="#__codelineno-0-142">142</a></span>
 <span class="normal"><a href="#__codelineno-0-143">143</a></span>
@@ -1017,32 +1011,30 @@
 <a id="__codelineno-0-146" name="__codelineno-0-146"></a>        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;WWW-Authenticate&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Basic realm=&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">realm</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">},</span>
 <a id="__codelineno-0-147" name="__codelineno-0-147"></a>    <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="pathfinderevents.ApiServer.check_auth" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">check_auth</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">check_auth</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Check plaintext auth.</p>
 <p>Pathfinder doesn't support sending any advanced API credentials like JWT or
 similar so we resort to the most insecure way possible to authenticate its
 requests.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-131">131</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-131">131</a></span>
 <span class="normal"><a href="#__codelineno-0-132">132</a></span>
 <span class="normal"><a href="#__codelineno-0-133">133</a></span>
 <span class="normal"><a href="#__codelineno-0-134">134</a></span>
@@ -1058,29 +1050,27 @@ requests.</p>
 <a id="__codelineno-0-137" name="__codelineno-0-137"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-138" name="__codelineno-0-138"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">==</span> <span class="n">username</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">==</span> <span class="n">password</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="pathfinderevents.ApiServer.dispatch_request" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">dispatch_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">dispatch_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Dispatch request and return any errors in response.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-149">149</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-149">149</a></span>
 <span class="normal"><a href="#__codelineno-0-150">150</a></span>
 <span class="normal"><a href="#__codelineno-0-151">151</a></span>
 <span class="normal"><a href="#__codelineno-0-152">152</a></span>
@@ -1104,29 +1094,27 @@ requests.</p>
 <a id="__codelineno-0-159" name="__codelineno-0-159"></a>            <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">},</span>
 <a id="__codelineno-0-160" name="__codelineno-0-160"></a>        <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="pathfinderevents.ApiServer.on_webhook" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">on_webhook</span><span class="p">(</span><span class="n">request</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">on_webhook</span><span class="p">(</span><span class="n">request</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Receive a Pathfinder RestApi call and produce a CloudEvent.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-162">162</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-162">162</a></span>
 <span class="normal"><a href="#__codelineno-0-163">163</a></span>
 <span class="normal"><a href="#__codelineno-0-164">164</a></span>
 <span class="normal"><a href="#__codelineno-0-165">165</a></span>
@@ -1194,29 +1182,27 @@ requests.</p>
 <a id="__codelineno-0-194" name="__codelineno-0-194"></a>        <span class="n">status</span><span class="o">=</span><span class="s2">&quot;200 Event Received&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-195" name="__codelineno-0-195"></a>    <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="pathfinderevents.ApiServer.run_server" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">run_server</span><span class="p">()</span></code>
+            <code class="highlight language-python"><span class="n">run_server</span><span class="p">()</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Run the API server.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-76"> 76</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-76"> 76</a></span>
 <span class="normal"><a href="#__codelineno-0-77"> 77</a></span>
 <span class="normal"><a href="#__codelineno-0-78"> 78</a></span>
 <span class="normal"><a href="#__codelineno-0-79"> 79</a></span>
@@ -1270,57 +1256,53 @@ requests.</p>
 <a id="__codelineno-0-101" name="__codelineno-0-101"></a>        <span class="n">cherrypy</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 <a id="__codelineno-0-102" name="__codelineno-0-102"></a>        <span class="n">cherrypy</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">block</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="pathfinderevents.ApiServer.set_producer" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">set_producer</span><span class="p">(</span><span class="n">producer</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">set_producer</span><span class="p">(</span><span class="n">producer</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Set a producer.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-72">72</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-72">72</a></span>
 <span class="normal"><a href="#__codelineno-0-73">73</a></span>
 <span class="normal"><a href="#__codelineno-0-74">74</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="k">def</span> <span class="nf">set_producer</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">Self</span><span class="p">,</span> <span class="n">producer</span><span class="p">:</span> <span class="n">KafkaProducer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Set a producer.&quot;&quot;&quot;</span>
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">producer</span> <span class="o">=</span> <span class="n">producer</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="pathfinderevents.ApiServer.stop_server" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">stop_server</span><span class="p">()</span></code>
+            <code class="highlight language-python"><span class="n">stop_server</span><span class="p">()</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Stop the server.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-104">104</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-104">104</a></span>
 <span class="normal"><a href="#__codelineno-0-105">105</a></span>
 <span class="normal"><a href="#__codelineno-0-106">106</a></span>
 <span class="normal"><a href="#__codelineno-0-107">107</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="k">def</span> <span class="nf">stop_server</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">Self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -1328,29 +1310,27 @@ requests.</p>
 <a id="__codelineno-0-106" name="__codelineno-0-106"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_server</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 <a id="__codelineno-0-107" name="__codelineno-0-107"></a>    <span class="n">cherrypy</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="pathfinderevents.ApiServer.wsgi_app" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">wsgi_app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">wsgi_app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Return a wsgi app.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-117">117</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-117">117</a></span>
 <span class="normal"><a href="#__codelineno-0-118">118</a></span>
 <span class="normal"><a href="#__codelineno-0-119">119</a></span>
 <span class="normal"><a href="#__codelineno-0-120">120</a></span>
@@ -1376,8 +1356,8 @@ requests.</p>
 <a id="__codelineno-0-128" name="__codelineno-0-128"></a>        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth_required</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
 <a id="__codelineno-0-129" name="__codelineno-0-129"></a>    <span class="k">return</span> <span class="n">response</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
 
@@ -1385,30 +1365,27 @@ requests.</p>
 
   </div>
 
-  </div>
-
+    </div>
 
 </div>
-
 
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="pathfinderevents.app" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">app</span><span class="p">(</span><span class="n">api</span><span class="p">,</span> <span class="n">bootstrap_servers</span><span class="p">,</span> <span class="n">security_protocol</span><span class="p">,</span> <span class="n">tls_cafile</span><span class="p">,</span> <span class="n">tls_certfile</span><span class="p">,</span> <span class="n">tls_keyfile</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">app</span><span class="p">(</span><span class="n">api</span><span class="p">,</span> <span class="n">bootstrap_servers</span><span class="p">,</span> <span class="n">security_protocol</span><span class="p">,</span> <span class="n">tls_cafile</span><span class="p">,</span> <span class="n">tls_certfile</span><span class="p">,</span> <span class="n">tls_keyfile</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Set up pathfinder sub, kafka producer &amp; block while processing messages.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-198">198</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-198">198</a></span>
 <span class="normal"><a href="#__codelineno-0-199">199</a></span>
 <span class="normal"><a href="#__codelineno-0-200">200</a></span>
 <span class="normal"><a href="#__codelineno-0-201">201</a></span>
@@ -1472,29 +1449,27 @@ requests.</p>
 <a id="__codelineno-0-228" name="__codelineno-0-228"></a>    <span class="n">producer</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 <a id="__codelineno-0-229" name="__codelineno-0-229"></a>    <span class="n">producer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="pathfinderevents.from_pathfinder_request" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">from_pathfinder_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">from_pathfinder_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Convert a basic pathfinder POST request's data into a proper CloudEvent.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-32">32</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-32">32</a></span>
 <span class="normal"><a href="#__codelineno-0-33">33</a></span>
 <span class="normal"><a href="#__codelineno-0-34">34</a></span>
 <span class="normal"><a href="#__codelineno-0-35">35</a></span>
@@ -1518,29 +1493,27 @@ requests.</p>
 <a id="__codelineno-0-42" name="__codelineno-0-42"></a>        <span class="n">form</span><span class="p">[</span><span class="s2">&quot;channel&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
 <a id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="pathfinderevents.main" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">main</span><span class="p">()</span></code>
+            <code class="highlight language-python"><span class="n">main</span><span class="p">()</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>CLI entrypoint parses args, sets up logging, and calls <code>app()</code>.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>pathfinderevents.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-232">232</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pathfinderevents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-232">232</a></span>
 <span class="normal"><a href="#__codelineno-0-233">233</a></span>
 <span class="normal"><a href="#__codelineno-0-234">234</a></span>
 <span class="normal"><a href="#__codelineno-0-235">235</a></span>
@@ -1740,8 +1713,8 @@ requests.</p>
 <a id="__codelineno-0-330" name="__codelineno-0-330"></a>        <span class="n">tls_keyfile</span><span class="o">=</span><span class="n">options</span><span class="o">.</span><span class="n">kafka_tls_keyfile</span><span class="p">,</span>
 <a id="__codelineno-0-331" name="__codelineno-0-331"></a>    <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
 
@@ -1749,7 +1722,7 @@ requests.</p>
 
   </div>
 
-  </div>
+    </div>
 
 </div>
 
@@ -1801,7 +1774,7 @@ requests.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ebd0bdb7.min.js"></script>
       
     
   </body>
