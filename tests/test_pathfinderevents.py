@@ -106,11 +106,10 @@ def test_api_webhook(mock_producer, mock_api, mock_sys_exit):  # noqa: ARG001
         "test",
         key="ch.rabe.api.events.pathfinder.v0alpha1.OnAir.Klangbecken",
         value=ANY,
-        headers=None,
+        headers={"content-type": "text/plain".encode("utf-8")},
     )
     value = json.loads(mock_producer.send.call_args.kwargs["value"])
     assert value["data"] == "Klangbecken"
-    assert value["datacontenttype"] == "text/plain"
     assert "partitionid" not in value
     assert (
         value["source"] == "https://github.com/radiorabe/pathfinder-cloudevents-service"
