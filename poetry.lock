@@ -782,13 +782,13 @@ files = [
 
 [[package]]
 name = "werkzeug"
-version = "3.0.3"
+version = "3.0.4"
 description = "The comprehensive WSGI web application library."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "werkzeug-3.0.3-py3-none-any.whl", hash = "sha256:fc9645dc43e03e4d630d23143a04a7f947a9a3b5727cd535fdfe155a17cc48c8"},
-    {file = "werkzeug-3.0.3.tar.gz", hash = "sha256:097e5bfda9f0aba8da6b8545146def481d06aa7d3266e7448e2cccf67dd8bd18"},
+    {file = "werkzeug-3.0.4-py3-none-any.whl", hash = "sha256:02c9eb92b7d6c06f31a782811505d2157837cea66aaede3e217c7c27c039476c"},
+    {file = "werkzeug-3.0.4.tar.gz", hash = "sha256:34f2371506b250df4d4f84bfe7b0921e4762525762bbd936614909fe25cd7306"},
 ]
 
 [package.dependencies]
@@ -817,4 +817,4 @@ test = ["zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "bd10c062dcb46779faaa5ae1b5f60473b03630891039218f2f38d7e8144ce4d1"
+content-hash = "6a80ebe79014b5bbc3d42bd38790b8d77b1f78359fd7915359670a0f6d274941"
