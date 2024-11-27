@@ -6,10 +6,11 @@ import json
 import logging
 import signal
 import sys
-from typing import TYPE_CHECKING, Any, Iterable, NoReturn, Self
+from typing import TYPE_CHECKING, Any, NoReturn, Self
 from urllib.parse import parse_qs
 
 if TYPE_CHECKING:
+    from collections.abc import Iterable
     from wsgiref.types import StartResponse, WSGIEnvironment
 
 import cherrypy  # type: ignore[import-untyped]
