@@ -179,11 +179,14 @@ class ApiServer:
             ce,
             key_mapper=_key_mapper,
         )
+        headers: list[tuple[str, bytes]] | None
+        if kafka_msg.headers:
+            headers = list(kafka_msg.headers.items())
         self.producer.send(
             self.topic,
             key=kafka_msg.key,
             value=kafka_msg.value,
-            headers=kafka_msg.headers if kafka_msg.headers else None,
+            headers=headers,
         ).add_errback(on_send_error)
         self.producer.flush()
         logger.info(

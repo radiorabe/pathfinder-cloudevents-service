@@ -106,7 +106,7 @@ def test_api_webhook(mock_producer, mock_api, mock_sys_exit):  # noqa: ARG001
         "test",
         key="ch.rabe.api.events.pathfinder.v0alpha1.OnAir.Klangbecken",
         value=ANY,
-        headers={"content-type": b"text/plain"},
+        headers=[("content-type", b"text/plain")],
     )
     value = json.loads(mock_producer.send.call_args.kwargs["value"])
     assert value["data"] == "Klangbecken"
