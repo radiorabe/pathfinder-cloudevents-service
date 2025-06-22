@@ -79,7 +79,7 @@ class ApiServer:
         if not self.producer:
             raise RuntimeError(_RUNTIME_ERROR_MISSING_PRODUCER)
         if self.debug:
-            from werkzeug.serving import run_simple
+            from werkzeug.serving import run_simple  # noqa: PLC0415
 
             run_simple(
                 self.bind_addr,
