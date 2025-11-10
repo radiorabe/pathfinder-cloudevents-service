@@ -27,9 +27,9 @@ pytest-random-order = "^1.2.0"
 pytest-ruff = "^0.5"
 ruff = "^0.14.4"
 
-[tool.pytest.ini_options]
-minversion = "7.2"
-addopts = "-ra -q --doctest-glob='*.md' --doctest-modules --cov --ignore=docs/ --ruff --mypy"
+[tool.pytest]
+minversion = "9.0"
+addopts = ["-ra", "-q", "--doctest-glob='*.md'", "--doctest-modules", "--cov", "--ignore=docs/", "--ruff", "--mypy"]
 filterwarnings = [
     "ignore::DeprecationWarning:cherrypy",
     "ignore::DeprecationWarning:pkg_resources",
