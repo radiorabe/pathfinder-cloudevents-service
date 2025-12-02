@@ -17,4 +17,4 @@ jobs:
       display-name: Subscribe to Pathfinder changes and emit CloudEvents on change
       tags: minimal rhel9 ubi9 rabe kafka cloudevents pathfinder axia
   mkdocs:
-    uses: radiorabe/actions/.github/workflows/release-mkdocs.yaml@v0.38.1
+    uses: radiorabe/actions/.github/workflows/release-mkdocs.yaml@v0.38.3
