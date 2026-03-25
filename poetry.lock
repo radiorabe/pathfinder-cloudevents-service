@@ -78,21 +78,19 @@ xcgi = ["flup"]
 
 [[package]]
 name = "cloudevents"
-version = "1.12.1"
+version = "2.0.0"
 description = "CloudEvents Python SDK"
 optional = false
-python-versions = "*"
+python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "cloudevents-1.12.1-py3-none-any.whl", hash = "sha256:5f1574bf49ff334381319bdddcab02175a69ca877a26d0900b59c85505b675b3"},
-    {file = "cloudevents-1.12.1.tar.gz", hash = "sha256:1eb52051309c3228934f86f41d50bd02c0e3d9561e5876e73ad8ad9f98f0d3ef"},
+    {file = "cloudevents-2.0.0-py3-none-any.whl", hash = "sha256:babb257989a933b18312897c3bf3a7cc65e270831227822f2db10b50d1278546"},
+    {file = "cloudevents-2.0.0.tar.gz", hash = "sha256:3224851b2ac902b868ed4bc1aa10772ada8cdf85f180322b12968d90a1dceef2"},
 ]
 
 [package.dependencies]
 deprecation = ">=2.0,<3.0"
-
-[package.extras]
-pydantic = ["pydantic (>=1.0.0,<3.0)"]
+python-dateutil = ">=2.8.2"
 
 [[package]]
 name = "colorama"
@@ -677,6 +675,21 @@ pytest = ">=5"
 ruff = ">=0.0.242"
 
 [[package]]
+name = "python-dateutil"
+version = "2.9.0.post0"
+description = "Extensions to the standard Python datetime module"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+groups = ["main"]
+files = [
+    {file = "python-dateutil-2.9.0.post0.tar.gz", hash = "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"},
+    {file = "python_dateutil-2.9.0.post0-py2.py3-none-any.whl", hash = "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"},
+]
+
+[package.dependencies]
+six = ">=1.5"
+
+[[package]]
 name = "pytz"
 version = "2024.1"
 description = "World timezone definitions, modern and historical"
@@ -821,6 +834,18 @@ test = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "ini2toml[lite] (>=
 type = ["importlib_metadata (>=7.0.2) ; python_version < \"3.10\"", "jaraco.develop (>=7.21) ; sys_platform != \"cygwin\"", "mypy (==1.14.*)", "pytest-mypy"]
 
 [[package]]
+name = "six"
+version = "1.17.0"
+description = "Python 2 and 3 compatibility utilities"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+groups = ["main"]
+files = [
+    {file = "six-1.17.0-py2.py3-none-any.whl", hash = "sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"},
+    {file = "six-1.17.0.tar.gz", hash = "sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"},
+]
+
+[[package]]
 name = "tempora"
 version = "5.5.1"
 description = "Objects and routines pertaining to date and time (tempora)"
@@ -910,4 +935,4 @@ test = ["zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "b466cfe4efed077a171c14c2d1d4483dcb271c34a41435881befd3e8a52976d6"
+content-hash = "1ff49a4ce98003e953730b3d4b17da53d253f6320cdf2eb14c1c395c65e2df25"
