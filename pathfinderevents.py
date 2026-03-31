@@ -14,8 +14,8 @@ if TYPE_CHECKING:
     from wsgiref.types import StartResponse, WSGIEnvironment
 
 import cherrypy  # type: ignore[import-untyped]
-from cloudevents.http import CloudEvent
-from cloudevents.kafka import to_structured
+from cloudevents.core.bindings.kafka import to_structured_event
+from cloudevents.core.v1.event import CloudEvent
 from configargparse import (  # type: ignore[import-untyped]
     ArgumentParser,
     YAMLConfigFileParser,
@@ -34,13 +34,13 @@ def from_pathfinder_request(request: Request) -> CloudEvent:
     """Convert a basic pathfinder POST request's data into a proper CloudEvent."""
     form = parse_qs(request.get_data(as_text=True))
     return CloudEvent(
-        {
+        attributes={
             "type": f"ch.rabe.api.events.pathfinder.v0alpha1.{form['event'][0]}",
             "source": "https://github.com/radiorabe/pathfinder-cloudevents-service",
             "subject": form["channel"][0],
             "datacontenttype": "text/plain",
         },
-        form["channel"][0],
+        data=form["channel"][0],
     )
 
 
@@ -169,13 +169,13 @@ class ApiServer:
         def _key_mapper(ce: CloudEvent) -> Any | None:  # noqa: ANN401
             return ".".join(
                 [
-                    ce.get("type"),  # type: ignore[list-item]
-                    ce.get("subject"),  # type: ignore[list-item]
+                    ce.get_type(),
+                    ce.get_subject(),
                 ],
             )
 
         ce = from_pathfinder_request(request)
-        kafka_msg = to_structured(
+        kafka_msg = to_structured_event(
             ce,
             key_mapper=_key_mapper,
         )
@@ -191,8 +191,8 @@ class ApiServer:
         self.producer.flush()
         logger.info(
             "Forwarded event %s with channel %s",
-            ce.get("type"),
-            ce.get("subject"),
+            ce.get_type(),
+            ce.get_subject(),
         )
         return Response(
             status="200 Event Received",
