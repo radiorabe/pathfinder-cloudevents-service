@@ -13,8 +13,9 @@ if TYPE_CHECKING:
     from collections.abc import Iterable
     from wsgiref.types import StartResponse, WSGIEnvironment
 
+    from cloudevents.core.base import BaseCloudEvent
+
 import cherrypy  # type: ignore[import-untyped]
-from cloudevents.core.base import BaseCloudEvent
 from cloudevents.core.bindings.kafka import to_structured_event
 from cloudevents.core.v1.event import CloudEvent
 from configargparse import (  # type: ignore[import-untyped]
