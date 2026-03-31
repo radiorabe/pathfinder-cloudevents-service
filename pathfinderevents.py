@@ -14,6 +14,7 @@ if TYPE_CHECKING:
     from wsgiref.types import StartResponse, WSGIEnvironment
 
 import cherrypy  # type: ignore[import-untyped]
+from cloudevents.core.base import BaseCloudEvent
 from cloudevents.core.bindings.kafka import to_structured_event
 from cloudevents.core.v1.event import CloudEvent
 from configargparse import (  # type: ignore[import-untyped]
@@ -166,13 +167,8 @@ class ApiServer:
         def on_send_error(ex: Exception) -> None:  # pragma: no cover
             logger.error("Failed to send CloudEvent", exc_info=ex)
 
-        def _key_mapper(ce: CloudEvent) -> Any | None:  # noqa: ANN401
-            return ".".join(
-                [
-                    ce.get_type(),
-                    ce.get_subject(),
-                ],
-            )
+        def _key_mapper(ce: BaseCloudEvent) -> str | bytes | None:
+            return f"{ce.get_type()}.{ce.get_subject()}"
 
         ce = from_pathfinder_request(request)
         kafka_msg = to_structured_event(
