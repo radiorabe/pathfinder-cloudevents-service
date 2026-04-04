@@ -125,7 +125,7 @@ async def webhook() -> Response:
             headers={"WWW-Authenticate": f'Basic realm="{app.config["REALM"]}"'},
         )
 
-    data = await request.get_data(as_text=True)
+    data = (await request.get_data()).decode()
     ce = from_pathfinder_request_data(data)
 
     def _key_mapper(cloud_event: BaseCloudEvent) -> str | bytes | None:
@@ -149,7 +149,7 @@ async def webhook() -> Response:
         ce.get_type(),
         ce.get_subject(),
     )
-    return Response(status="200 Event Received")
+    return Response(status=200)
 
 
 @click.command()
