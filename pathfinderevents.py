@@ -125,7 +125,8 @@ async def webhook() -> Response:
             headers={"WWW-Authenticate": f'Basic realm="{app.config["REALM"]}"'},
         )
 
-    data = (await request.get_data()).decode()
+    raw = await request.get_data()
+    data = raw.decode() if isinstance(raw, bytes) else raw
     ce = from_pathfinder_request_data(data)
 
     def _key_mapper(cloud_event: BaseCloudEvent) -> str | bytes | None:
