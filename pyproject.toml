@@ -12,26 +12,25 @@ pathfinderevents = 'pathfinderevents:main'
 
 [tool.poetry.dependencies]
 python = "^3.11"
-configargparse = "^1.7"
 cloudevents = "^2.0.0"
-cherrypy = "^18.10.0"
-kafka-python-ng = "^2.2.3"
-pyyaml = "^6.0"
-werkzeug = "^3.1.6"
+quart = "^0.20.0"
+aiokafka = "^0.13.0"
+typed-settings = {version = "^25.3.0", extras = ["click", "attrs"]}
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^9.0.2"
+pytest-asyncio = "^1.3.0"
 pytest-cov = "^7.1.0"
 pytest-mypy = "^1.0.1"
 pytest-random-order = "^1.2.0"
 pytest-ruff = "^0.5"
 ruff = "^0.15.9"
 
-[tool.pytest]
+[tool.pytest.ini_options]
 minversion = "9.0"
-addopts = ["-ra", "-q", "--doctest-glob='*.md'", "--doctest-modules", "--cov", "--ignore=docs/", "--ruff", "--mypy"]
+asyncio_mode = "auto"
+addopts = ["-ra", "-q", "--doctest-glob=*.md", "--doctest-modules", "--cov", "--ignore=docs/", "--ruff", "--mypy"]
 filterwarnings = [
-    "ignore::DeprecationWarning:cherrypy",
     "ignore::DeprecationWarning:pkg_resources",
 ]
 
