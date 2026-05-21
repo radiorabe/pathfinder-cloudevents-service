@@ -1,21 +1,32 @@
 from base64 import b64encode
+from unittest.mock import AsyncMock
 
-from werkzeug.test import Client
-from werkzeug.wrappers import Response
+import pytest
+
+from pathfinderevents import app as quart_app
+
+AUTH_HEADERS = {"Authorization": f"Basic {b64encode(b'test:test').decode()}"}
 
 
-class AuthenticatedClient(Client):
-    """An authenticated client for testing."""
+@pytest.fixture
+def mock_producer():
+    return AsyncMock()
 
-    def __init__(self, app, user, password):
-        super().__init__(app, Response)
-        self.user = user
-        self.password = password
 
-    def post(self, *args, **kwargs):
-        if "headers" not in kwargs:  # pragma: no cover
-            kwargs["headers"] = {}
-        if "Authorization" not in kwargs["headers"]:
-            pwd = b64encode(f"{self.user}:{self.password}".encode()).decode("utf-8")
-            kwargs["headers"]["Authorization"] = f"Basic {pwd}"
-        return super().post(*args, **kwargs)
+@pytest.fixture(autouse=True)
+def _configure_app(mock_producer):
+    quart_app.config.update(
+        {
+            "TESTING": True,
+            "REALM": "test",
+            "USERNAME": "test",
+            "PASSWORD": "test",
+            "TOPIC": "test",
+            "KAFKA_BOOTSTRAP_SERVERS": "localhost:9092",
+            "KAFKA_SECURITY_PROTOCOL": "PLAINTEXT",
+            "KAFKA_TLS_CAFILE": None,
+            "KAFKA_TLS_CERTFILE": None,
+            "KAFKA_TLS_KEYFILE": None,
+            "PRODUCER": mock_producer,
+        },
+    )
