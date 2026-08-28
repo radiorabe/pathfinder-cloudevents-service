@@ -196,7 +196,7 @@ class ApiServer:
         )
 
 
-def app(  # noqa: PLR0913
+def app(  # noqa: PLR0913, PLR0917
     api: ApiServer,
     bootstrap_servers: list[str],
     security_protocol: str,

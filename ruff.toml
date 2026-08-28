@@ -5,6 +5,7 @@
 [lint]
 select = ["ALL"]
 ignore = [
+	"CPY001",  # we don't need copyright headers in our jurisdiction
 	"D203",    # we prefer blank-line-before-class (D211) for black compat
 	"D213",    # we prefer multi-line-summary-first-line (D212)
 ]
